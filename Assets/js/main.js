@@ -15,8 +15,8 @@ btn.click(function () {
 
   $("ol.lista").append(clone)
 
-  $(".lista span").click(function () {
-    clone.remove()
+  $(".lista li span").click(function () {
+    $(this).parent().remove()
   })
 })
 
