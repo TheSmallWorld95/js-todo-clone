@@ -9,14 +9,17 @@ btn.click(function () {
 
   var value = $("input").val()
 
-  $(".template li ").prepend(value)
-
   var clone = $(".template li ").clone()
 
+  clone.prepend(value)
 
   $("ol.lista").append(clone)
 
+  $(".lista span").click(function () {
+    clone.remove()
+  })
 })
+
 
 
 // Punto sull'input creato nell'HTML e prendo il suo valore,
