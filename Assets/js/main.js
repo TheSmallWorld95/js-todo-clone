@@ -18,6 +18,9 @@ btn.click(function () {
   $(".lista li span").click(function () {
     $(this).parent().remove()
   })
+  $(".lista li").dblclick(function () {
+  $(this).toggleClass("underline")
+  })
 })
 
 
