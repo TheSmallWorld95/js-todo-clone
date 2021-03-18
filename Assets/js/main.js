@@ -2,25 +2,31 @@
 // Rendiamo il tutto gradevole alla vista.
 // Bonus
 // Permettiamo la modifica di un todo già aggiunto.
-var btn = $("button")
+$(document).ready(function () {
+  var btn = $("button")
 
 
-btn.click(function () {
+  btn.click(function () {
 
-  var value = $("input").val()
+    var value = $("input").val()
 
-  var clone = $(".template li ").clone()
+    var clone = $(".template li ").clone()
 
-  clone.prepend(value)
+    clone.prepend(value)
 
-  $("ol.lista").append(clone)
 
-  $(".lista li span").click(function () {
-    $(this).parent().remove()
+    $(document).on("click", ".lista li span", function () {
+      $(this).parent().remove()
+    })
+
+    $(document).on("dblclick", ".lista li", function () {
+      $(this).toggleClass("underline")
+    })
+
+    $("ol.lista").append(clone)
+
   })
-  $(".lista li").dblclick(function () {
-  $(this).toggleClass("underline")
-  })
+
 })
 
 
